@@ -7,76 +7,30 @@
 
 <style>
 body { font-family: Arial, sans-serif; text-align: center; padding: 40px; background-color: beige; overflow-x: hidden; }
-
-/* Buttons */
 button { padding: 10px 18px; margin: 6px; font-size: 16px; cursor: pointer; border: none; border-radius: 10px; background-color: black; color: white; transition: all 0.3s; }
 button:hover { background-color: lightblue; color: black; }
 #revealBtn, #musicToggleBtn { animation: pulse 1.5s infinite; }
-
-/* Handwritten Card */
 .card { max-width: 700px; margin: 50px auto; padding: 40px; background: #fffaf5; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 1px solid #f0e4d7; animation: fadeIn 2s ease; }
 .card h2 { font-family: 'Brush Script MT','Segoe Script',cursive; font-size: 32px; margin-bottom: 20px; color: #5a3e2b; }
 .card p { font-family: 'Segoe Script','Comic Sans MS',cursive; font-size: 18px; line-height: 1.8; color: #4a3a2a; margin-bottom: 16px; }
-
-/* Animations */
 @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes pulse { 0% { transform: scale(1); box-shadow:0 0 0 rgba(0,0,0,0.2); } 50% { transform: scale(1.05); box-shadow:0 0 15px rgba(0,0,0,0.4); } 100% { transform: scale(1); box-shadow:0 0 0 rgba(0,0,0,0.2);} }
-
-/* Video Modal */
 #videoModal { display: none; position: fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background-color: rgba(0,0,0,0.7); justify-content:center; align-items:center; opacity:0; transition: opacity 0.4s ease; }
 #videoModal.show { display:flex; opacity:1; }
 #videoModalContent { position:relative; max-width:95%; max-height:95%; display:flex; justify-content:center; align-items:center; transform:scale(0.8); transition: transform 0.4s ease; }
 #videoModal.show #videoModalContent { transform:scale(1); }
 #videoModalContent video { max-width:100%; max-height:100%; width:auto; height:auto; border-radius:10px; }
 #videoModalClose { position:absolute; top:-15px; right:-15px; background:red; color:white; border:none; border-radius:50%; font-size:18px; width:30px; height:30px; cursor:pointer; }
-
-/* Quiz */
 #result { margin-top:20px; font-size:18px; font-weight:bold; }
 .correct { color:green; }
 .wrong { color:red; }
-
-/* Fun Facts */
 #funFactsQuiz { display:none; margin-top:30px; }
-#fact { 
-    font-size: 18px; 
-    background: #fffae6; 
-    padding: 20px; 
-    border-radius: 12px; 
-    display: inline-block; 
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2); 
-    transition: transform 0.3s, background 0.3s; 
-}
+#fact { font-size: 18px; background: #fffae6; padding: 20px; border-radius: 12px; display: inline-block; box-shadow: 0 6px 15px rgba(0,0,0,0.2); transition: transform 0.3s, background 0.3s; }
 #fact:hover { transform: scale(1.05); background: #fff2cc; }
-
-/* Countdown styling */
-#countdown {
-    margin-top: 40px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #ffffff;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    padding: 20px 30px;
-    border-radius: 15px;
-    display: inline-block;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    animation: pulseCountdown 2s infinite;
-}
+#countdown { margin-top: 40px; font-size: 24px; font-weight: bold; color: #ffffff; background: linear-gradient(135deg, #ff9a9e, #fad0c4); padding: 20px 30px; border-radius: 15px; display: inline-block; box-shadow: 0 8px 20px rgba(0,0,0,0.25); animation: pulseCountdown 2s infinite; }
 @keyframes pulseCountdown { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-
-/* Confetti */
-.confetti {
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    opacity: 0.7;
-    z-index: 9999;
-    pointer-events: none;
-    animation: fall linear infinite;
-}
-@keyframes fall {
-    0% { transform: translateY(0) rotate(0deg); }
-    100% { transform: translateY(100vh) rotate(360deg); }
-}
+.confetti { position: fixed; width: 10px; height: 10px; opacity: 0.7; z-index: 9999; pointer-events: none; animation: fall linear infinite; }
+@keyframes fall { 0% { transform: translateY(0) rotate(0deg); } 100% { transform: translateY(100vh) rotate(360deg); } }
 </style>
 </head>
 
@@ -86,16 +40,8 @@ button:hover { background-color: lightblue; color: black; }
 
 <div class="card">
     <h2>💙 A Message for You</h2>
-    <p>
-        Today we’d like to celebrate with you your special day. 
-        We just want to say thank you for being our constant source of strength and guidance. 
-        Your love, patience, and quiet sacrifices have touched our lives in countless ways words cannot explain.
-    </p>
-    <p>
-        We’re grateful for your support, your wisdom, and the way you always believe in us, 
-        even when we doubt ourselves. Your care and love mean the world to us. 
-        We are truly blessed to have you in our lives, and we wish you a day filled with peace, joy, and happiness.
-    </p>
+    <p>Thank you for being our constant source of strength and guidance. Your love and patience touch our lives in countless ways.</p>
+    <p>We’re grateful for your support, wisdom, and care. Wishing you a day filled with joy and happiness.</p>
     <p style="margin-top:30px;">— With love, The Iddy's❤️</p>
 </div>
 
@@ -104,16 +50,16 @@ button:hover { background-color: lightblue; color: black; }
 </div>
 
 <div style="margin-top:30px;">
-    <button class="videoBtn" data-video="video/mum-message.mp4">🎥 Message from Mum</button>
-    <button class="videoBtn" data-video="video/shanny-message.mp4">🎥 Message from Shanny</button>
-    <button class="videoBtn" data-video="video/silo-message.mp4">🎥 Message from Silo</button>
-    <button class="videoBtn" data-video="video/dance.mp4">💃 Dance for Dad</button>
+    <button class="videoBtn" data-video="video/Mum-Message-small.mp4">🎥 Message from Mum</button>
+    <button class="videoBtn" data-video="video/Shanny-Message-small.mp4">🎥 Message from Shanny</button>
+    <button class="videoBtn" data-video="video/Silo-Message-small.mp4">🎥 Message from Silo</button>
+    <button class="videoBtn" data-video="video/Dance-small.mp4">💃 Dance for Dad</button>
 </div>
 
 <div id="videoModal">
     <div id="videoModalContent">
         <button id="videoModalClose">&times;</button>
-        <video id="birthdayVideo" controls>
+        <video id="birthdayVideo" controls preload="auto">
             <source src="" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -127,7 +73,6 @@ button:hover { background-color: lightblue; color: black; }
 <div id="funFactsQuiz">
     <p id="fact">Click to see a fun fact 🍀</p>
     <button id="factBtn">Show Fun Fact</button>
-
     <h3>What is Dad's favorite hobby? 🎯</h3>
     <button class="answer" data-answer="A">🏋️ Gym</button>
     <button class="answer" data-answer="B">🥃 Drinking</button>
@@ -139,19 +84,17 @@ button:hover { background-color: lightblue; color: black; }
 <p id="countdown"></p>
 
 <script>
-// Background Music
 const music = new Audio("audio/happy-birthday-harmonize.mp3");
-music.loop = true;
-music.volume = 1; 
-let musicPlaying = true;
+music.loop = true; music.volume = 1; 
+let musicPlaying = false;
 
-function fadeAudio(audio, targetVolume, duration) {
-    const step = (targetVolume - audio.volume) / (duration / 50);
-    return new Promise(resolve => {
-        const fadeInterval = setInterval(() => {
-            audio.volume += step;
-            if ((step>0 && audio.volume>=targetVolume) || (step<0 && audio.volume<=targetVolume)) {
-                audio.volume = targetVolume;
+function fadeAudio(audio, targetVolume, duration){
+    const step=(targetVolume-audio.volume)/(duration/50);
+    return new Promise(resolve=>{
+        const fadeInterval=setInterval(()=>{
+            audio.volume+=step;
+            if((step>0 && audio.volume>=targetVolume)||(step<0 && audio.volume<=targetVolume)){
+                audio.volume=targetVolume;
                 clearInterval(fadeInterval);
                 resolve();
             }
@@ -159,32 +102,33 @@ function fadeAudio(audio, targetVolume, duration) {
     });
 }
 
-// Play muted music on load
-music.play().catch(()=>{ musicPlaying=false; });
-
-// Fade in after first user interaction
-let firstInteraction = false;
-document.body.addEventListener('click', async () => {
-    if (!firstInteraction) {
-        firstInteraction = true;
-        if (!musicPlaying) { music.play(); musicPlaying=true; }
-        await fadeAudio(music,1,2000);
+// Play music on first click anywhere
+document.body.addEventListener('click', ()=>{
+    if(!musicPlaying){
+        music.play().then(()=>{ musicPlaying=true; musicBtn.textContent="⏸ Pause Music"; })
+        .catch(err=>console.log("Autoplay blocked, waiting for user interaction."));
     }
-}, {once:true});
+},{once:true});
 
-const musicBtn = document.getElementById("musicToggleBtn");
+const musicBtn=document.getElementById("musicToggleBtn");
 musicBtn.addEventListener("click", ()=>{
-    if (!musicPlaying){ music.play(); musicPlaying=true; musicBtn.textContent="⏸ Pause Music"; }
-    else { music.pause(); musicPlaying=false; musicBtn.textContent="▶️ Play Music"; }
+    if(!musicPlaying){
+        music.play();
+        musicPlaying=true;
+        musicBtn.textContent="⏸ Pause Music";
+    } else {
+        music.pause();
+        musicPlaying=false;
+        musicBtn.textContent="▶️ Play Music";
+    }
 });
 
-// Video Modal
 const videoModal=document.getElementById("videoModal");
 const videoModalClose=document.getElementById("videoModalClose");
 const birthdayVideo=document.getElementById("birthdayVideo");
 
 async function openVideoModal(src){
-    if(musicPlaying) await fadeAudio(music,0,400); // fade out fully
+    if(musicPlaying) await fadeAudio(music,0,400);
     birthdayVideo.querySelector("source").src=src;
     birthdayVideo.load();
     videoModal.classList.add("show");
@@ -195,7 +139,7 @@ async function closeVideoModal(){
     birthdayVideo.pause();
     videoModal.classList.remove("show");
     birthdayVideo.currentTime=0;
-    if(musicPlaying) await fadeAudio(music,1,400); // fade back in
+    if(musicPlaying) await fadeAudio(music,1,400);
 }
 
 document.querySelectorAll(".videoBtn").forEach(btn=>{
@@ -205,19 +149,14 @@ document.querySelectorAll(".videoBtn").forEach(btn=>{
 videoModalClose.addEventListener("click",closeVideoModal);
 videoModal.addEventListener("click",(e)=>{ if(e.target===videoModal) closeVideoModal(); });
 
-// Fun Facts & Quiz
-document.getElementById("revealBtn").addEventListener("click",()=>{
+document.getElementById("revealBtn").addEventListener("click", ()=>{
     document.getElementById("funFactsQuiz").style.display="block";
     document.getElementById("revealBtn").style.display="none";
 });
 
-const facts=[
-    "🥃 Dad likes taking whisky on weekends!",
-    "❤️ Dad always supports his family.",
-    "💡 Dad gives the best advice."
-];
+const facts=["🥃 Dad likes taking whisky on weekends!","❤️ Dad always supports his family.","💡 Dad gives the best advice."];
 let i=0;
-document.getElementById("factBtn").addEventListener("click",()=>{
+document.getElementById("factBtn").addEventListener("click", ()=>{
     const factEl=document.getElementById("fact");
     factEl.textContent=facts[i];
     i=(i+1)%facts.length;
@@ -241,7 +180,6 @@ document.querySelectorAll(".answer").forEach(btn=>{
     });
 });
 
-// Countdown & Confetti
 function updateCountdown(){
     const birthday=new Date("December 16, 2025 00:00:00");
     const now=new Date();
@@ -260,7 +198,6 @@ function updateCountdown(){
 updateCountdown();
 setInterval(updateCountdown,1000);
 
-// Continuous Confetti for 8 seconds
 function launchConfetti(){
     const colors=["#ff0a54","#ff477e","#ff7096","#ff85a1","#fbb1b9","#f9bec7","#f7cad0"];
     const confettiInterval = setInterval(()=>{
